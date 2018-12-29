@@ -1,0 +1,96 @@
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .container{
+      max-width: 1920px;
+  }
+  .container-fluid{
+      max-width: 1060px;
+      margin: 0 auto;
+  }
+  .col {
+    flex: 1 1 8%;
+    margin: 0 0 0.5rem 0;
+    padding: 0.5em 10px;
+    box-sizing: border-box;
+  }
+  
+  /* nested grids */
+  .row .row, .row.nested {
+    flex: 1 1 auto;
+  
+  }
+  
+
+  
+  /* center grids */
+  .row.center {
+    justify-content: center;
+  }
+  .row.right{
+    justify-content: flex-end;
+  }
+  
+  .center .col {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  //space between
+  .between{
+    justify-content: space-between;
+  }
+  
+  /* columns widths */
+  
+  .col-1 {
+    flex-basis: 8.3333%;
+  }
+  
+  .col-2 {
+    flex-basis: 16.6666%; 
+  }
+  
+  .col-3 {
+    flex-basis: 25%;
+  }
+  
+  .col-4 {
+    flex-basis: 31.5%;
+  }
+  
+  .col-5 {
+    flex-basis: 41.6666%;
+  }
+  
+  .col-6 {
+    flex-basis: 50%;
+  }
+  
+  .col-7 {
+    flex-basis: 58.3333%;
+  }
+  
+  .col-8 {
+    flex-basis: 66.6666%;
+  }
+  
+  .col-9 {
+    flex-basis: 75%;
+  }
+  
+  .col-10 {
+    flex-basis: 83.3333%;
+  }
+  
+  .col-11 {
+    flex-basis: 91.6666%;
+  }
+  
+  .col-12 {
+    flex-basis: 100%;
+  }
+  

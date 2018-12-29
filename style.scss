@@ -1,0 +1,116 @@
+$base__font-family: "Open Sans", sans-serif;
+$base__font-size: 62.5%;
+
+
+html{
+    font-size: $base__font-size;
+}
+body{
+    font-family: $base__font-family;
+}
+.header{
+    background: url("./images/home-slide01.jpg") bottom center no-repeat;
+    min-height: 100vh;
+    .header__logo{
+        margin: 2rem 0 0 2rem;
+    }
+    .header__logoImg{
+        width: 290px;
+    }
+    .header__nav{
+        margin-left: auto;
+    }
+    .nav__list{
+        margin-top: 4.7rem;
+    }
+    .nav__item{
+        border-right: 1px white solid;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        color: white;
+        padding: 1rem 2.6rem;
+        .item__link{
+            text-decoration: none;
+            color: white;
+        }
+    }
+    .nav__item--last{
+        border-right: 0;
+        margin-right: 2.7rem;
+    }
+ 
+}
+
+.shop{
+    .basket{
+        margin-top: 4.3rem;
+        .basket__position{
+            border: 1px  rgb(17, 3, 95) solid;
+            padding: 1rem;
+            .basket__heading{
+                color: black;
+                font-size: 3.3rem;
+                border-bottom: 1px  rgb(17, 3, 95) solid;
+                font-weight: bold;
+                margin: 1rem;
+                padding: 0 17rem 0.8rem 0;
+            }
+            .basket__element{
+                margin: 1rem 1.7rem 0 auto;
+                font-size: 3.4rem;
+                .basket__text{
+                    display: inline;
+                    }
+                .basket__amount{
+                    display: inline;
+                    color: red;
+                }
+                }
+        .basket__content{
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 2.4rem;
+            padding-bottom: 2rem;
+        }
+    
+            
+        }
+    }
+    
+
+}
+.heroes{
+    margin-top: 6rem;
+    justify-content: space-between;
+    .hero--row{
+        margin-top: 4rem;
+    }
+    .hero{
+        margin-bottom: 0.7rem;
+        .hreo__name{
+            font-size: 2.2rem;
+            margin-top: 0.3rem;
+        }
+        .hero__rent{
+            font-size: 1.3rem;
+            margin: 0rem 0 0rem 0;
+        }
+        text-align: center;
+        .hero__picture{
+            width: 100%;
+        
+        }
+    }
+}
+
+
+
+.footer{
+    text-align: center;
+    background-color: #271E54;
+    font-size: 1rem;
+    padding: 2rem;
+    color: white;
+    margin-top: 1rem;
+
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+
+    <meta charset="utf-8">
+    <meta name="description" content="strona hero">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="grid.css">
+
+    <title>hero</title>
+    <!--<link rel="shortcut icon" href="PNG/webkin.png" type="image/png">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="header container row">
+      <div class="header__logo">
+        <a href="#"><img class="header__logoImg" src="./images/logo.png"/></a>
+      </div>
+      <nav class="header__nav">
+
+          <ul class="nav__list row">
+            <li class="nav__item"><a class="item__link "href="addHero.html">dodaj herosa</a></li>
+            <li class="nav__item">edytuj herosa</li>
+            <li class="nav__item">usuń herosa</li>
+            <li class="nav__item">wyczyść bazę</li>
+            <li class="nav__item nav__item--last">wczytaj herosów</li>
+          </ul>
+
+      </nav>
+    </header>
+    
+    <!--shop section-->
+    <article class="shop container-fluid">
+      <section class="basket">
+        <div class="basket__position">
+          <div class="basketText__position row">
+            <h1 class="basket__heading">Koszyk</h1>
+            <div class="basket__element">
+              <p class="basket__text">Do zapłaty</p>
+              <div class="basket__amount">0.00 zł</div>
+            </div> 
+          </div>
+          <div class="basket__content">Twój koszyk jest pusty</div>
+        
+        </div>
+      </section>
+
+       <!--heroes section-->
+      <section class="heroes row">
+        
+
+      </section>
+    </article>
+
+    <footer class="footer container">
+      <p class="footer__text">
+        Need a Hero - Pure JS/CSS Aplikacja do ćwiczeń nabytej wiedzy o JavaSript
+      </p>
+    </footer>     
+    <script type="text/javascript" src="allHero.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+  </body>
+</html>

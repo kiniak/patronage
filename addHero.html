@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="strona hero">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="addHero.css">
+    <link rel="stylesheet" type="text/css" href="grid.css">
+    <title>add hero</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="header container row">
+      <div class="header__logo">
+        <a href="index.html"><img class="header__logoImg" src="images/logo.png"/></a>
+      </div>
+      <nav class="header__nav">
+
+          <ul class="nav__list row">
+            <li class="nav__item">dodaj herosa</li>
+            <li class="nav__item">edytuj herosa</li>
+            <li class="nav__item">usuń herosa</li>
+            <li class="nav__item">wyczyść bazę</li>
+            <li class="nav__item nav__item--last">wczytaj herosów</li>
+          </ul>
+
+      </nav>
+    </header>
+
+    <section class="addHeroes container">
+        <div class="addHeroes__add">
+          <h1 class="addHeroes__heading">Dodaj Herosa</h1>
+          <form class="form row" id="hero_form">
+          <input class="form__input col-11" type="text" name="name" placeholder="Nazwa Bohatera" data-error="podaj nazwe Herosa">
+            <input class="form__input col-11" type="text" name="picture" placeholder="Adres/nazwa zdjęcia"  data-error="dodaj zdjęcie">
+            <input class="form__input col-11" type="text" name="price" placeholder="cena wynajmu/h"  data-error="podaj cene"> 
+            <input class="form__input form__input--last col-11" name="newDescription" type="text" placeholder="Opis Bohareta">
+            <button class="addHeroes__button" type="Submit">Submit</button>
+          </form> 
+        </div>
+    </section>
+    <footer class="footer container">
+      <p class="footer__text">
+        Need a Hero - Pure JS/CSS Aplikacja do ćwiczeń nabytej wiedzy o JavaSript
+      </p>
+    </footer>     
+    <script type="text/javascript" src="allHero.js"></script>
+    <script type="text/javascript" src="addHero.js"></script>
+  </body>
+</html>
