@@ -4,14 +4,60 @@ html {
 body {
   font-family: "Open Sans", sans-serif; }
 
+.heros_description {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; }
+  .heros_description .description_hero {
+    width: 100rem;
+    height: 35rem;
+    background-color: white;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: block; }
+    .heros_description .description_hero .hero_about {
+      display: flex; }
+      .heros_description .description_hero .hero_about .hero_noun {
+        text-transform: uppercase;
+        font-size: 3.3rem;
+        letter-spacing: 1px; }
+        .heros_description .description_hero .hero_about .hero_noun .hero_noun-border {
+          border-bottom: 1px solid grey;
+          display: inline-block;
+          padding-bottom: 2rem; }
+      .heros_description .description_hero .hero_about .hero_img {
+        margin: 0 3rem 2rem 3rem; }
+      .heros_description .description_hero .hero_about .hero_jpg {
+        max-height: 30rem; }
+      .heros_description .description_hero .hero_about .hero_text {
+        max-width: 50rem; }
+    .heros_description .description_hero .hero_close {
+      text-align: right;
+      font-size: 1.5rem;
+      margin: 1rem 1rem 0rem 0rem;
+      color: grey; }
+  .heros_description_on {
+    display: block; }
+
 .header {
   background: url("./images/home-slide01.jpg") bottom center no-repeat;
   min-height: 100vh; }
-  .header .header__logo {
+  .header__logo {
     margin: 2rem 0 0 2rem; }
-  .header .header__logoImg {
+  .header__logoImg {
     width: 290px; }
-  .header .header__nav {
+  .header__nav {
     margin-left: auto; }
   .header .nav__list {
     margin-top: 4.7rem; }
@@ -30,29 +76,29 @@ body {
 
 .shop .basket {
   margin-top: 4.3rem; }
-  .shop .basket .basket__position {
+  .shop .basket__position {
     border: 1px #11035f solid;
     padding: 1rem; }
-    .shop .basket .basket__position .basket__heading {
-      color: black;
-      font-size: 3.3rem;
-      border-bottom: 1px #11035f solid;
-      font-weight: bold;
-      margin: 1rem;
-      padding: 0 17rem 0.8rem 0; }
-    .shop .basket .basket__position .basket__element {
-      margin: 1rem 1.7rem 0 auto;
-      font-size: 3.4rem; }
-      .shop .basket .basket__position .basket__element .basket__text {
-        display: inline; }
-      .shop .basket .basket__position .basket__element .basket__amount {
-        display: inline;
-        color: red; }
-    .shop .basket .basket__position .basket__content {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-top: 2.4rem;
-      padding-bottom: 2rem; }
+  .shop .basket__heading {
+    color: black;
+    font-size: 3.3rem;
+    border-bottom: 1px #11035f solid;
+    font-weight: bold;
+    margin: 1rem;
+    padding: 0 17rem 0.8rem 0; }
+  .shop .basket__element {
+    margin: 1rem 1.7rem 0 auto;
+    font-size: 3.4rem; }
+    .shop .basket__element .basket__text {
+      display: inline; }
+    .shop .basket__element .basket__amount {
+      display: inline;
+      color: red; }
+  .shop .basket__content {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 2.4rem;
+    padding-bottom: 2rem; }
 
 .heroes {
   margin-top: 6rem;
@@ -62,13 +108,13 @@ body {
   .heroes .hero {
     margin-bottom: 0.7rem;
     text-align: center; }
-    .heroes .hero .hreo__name {
+    .heroes .hero__name {
       font-size: 2.2rem;
       margin-top: 0.3rem; }
-    .heroes .hero .hero__rent {
+    .heroes .hero__rent {
       font-size: 1.3rem;
       margin: 0rem 0 0rem 0; }
-    .heroes .hero .hero__picture {
+    .heroes .hero__picture {
       width: 100%; }
 
 .footer {

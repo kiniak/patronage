@@ -41,6 +41,8 @@ body {
       text-align: center;
       margin-top: 4.3rem;
       padding: 6.3rem 0 2rem 0; }
+    .addHeroes .addHeroes__add form-error {
+      color: red; }
     .addHeroes .addHeroes__add .form__input {
       border: none;
       border-bottom: 1px solid gray;

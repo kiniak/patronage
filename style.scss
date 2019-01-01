@@ -8,16 +8,74 @@ html{
 body{
     font-family: $base__font-family;
 }
+
+.heros_description{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    .description_hero{
+        width: 100rem;
+        height: 35rem;
+        background-color: white;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        display: block;
+        .hero_about{
+         
+            display: flex;
+            .hero_noun{
+                text-transform: uppercase;
+                font-size: 3.3rem;
+                letter-spacing: 1px;
+                .hero_noun-border{
+                    border-bottom: 1px solid grey;
+                    display: inline-block;
+                    padding-bottom: 2rem;
+                }
+            }
+            .hero_img{
+                margin: 0 3rem 2rem 3rem;
+                
+            }
+            .hero_jpg{
+                max-height: 30rem;          
+            }  
+            .hero_text{
+                max-width: 50rem;
+            }   
+        }
+            .hero_close{
+            text-align: right;
+            font-size: 1.5rem;
+            margin: 1rem 1rem 0rem 0rem;
+            color: grey;
+        }
+    }
+    &_on {
+        display: block;
+    }
+}
 .header{
     background: url("./images/home-slide01.jpg") bottom center no-repeat;
     min-height: 100vh;
-    .header__logo{
+    &__logo{
         margin: 2rem 0 0 2rem;
     }
-    .header__logoImg{
+    &__logoImg{
         width: 290px;
     }
-    .header__nav{
+    &__nav{
         margin-left: auto;
     }
     .nav__list{
@@ -44,40 +102,36 @@ body{
 .shop{
     .basket{
         margin-top: 4.3rem;
-        .basket__position{
+        &__position{
             border: 1px  rgb(17, 3, 95) solid;
-            padding: 1rem;
-            .basket__heading{
-                color: black;
-                font-size: 3.3rem;
-                border-bottom: 1px  rgb(17, 3, 95) solid;
-                font-weight: bold;
-                margin: 1rem;
-                padding: 0 17rem 0.8rem 0;
+            padding: 1rem;         
+        }
+        &__heading{
+            color: black;
+            font-size: 3.3rem;
+            border-bottom: 1px  rgb(17, 3, 95) solid;
+            font-weight: bold;
+            margin: 1rem;
+            padding: 0 17rem 0.8rem 0;
+        }
+        &__element{
+            margin: 1rem 1.7rem 0 auto;
+            font-size: 3.4rem;
+            .basket__text{
+                display: inline;
+                }
+            .basket__amount{
+                display: inline;
+                color: red;
             }
-            .basket__element{
-                margin: 1rem 1.7rem 0 auto;
-                font-size: 3.4rem;
-                .basket__text{
-                    display: inline;
-                    }
-                .basket__amount{
-                    display: inline;
-                    color: red;
-                }
-                }
-        .basket__content{
+            }
+        &__content{
             font-size: 2.5rem;
             text-align: center;
             margin-top: 2.4rem;
             padding-bottom: 2rem;
         }
-    
-            
-        }
-    }
-    
-
+    } 
 }
 .heroes{
     margin-top: 6rem;
@@ -87,16 +141,16 @@ body{
     }
     .hero{
         margin-bottom: 0.7rem;
-        .hreo__name{
+        &__name{
             font-size: 2.2rem;
             margin-top: 0.3rem;
         }
-        .hero__rent{
+        &__rent{
             font-size: 1.3rem;
             margin: 0rem 0 0rem 0;
         }
         text-align: center;
-        .hero__picture{
+        &__picture{
             width: 100%;
         
         }

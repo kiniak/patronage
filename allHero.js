@@ -10,32 +10,38 @@ let heroes = [
     {
         name: 'Superman',
         photo:  './images/superman.jpg',
-        price: 3500
+        price: 3500,
+        description: 'Id vis ignota ridens, eos at nibh vidisse tibique. Ludus propriae nam an, ei sit amet mazim invenire, eam illud munere at. Ut mel ferri dicam appetere. Ei laudem reprimique percipitur his, dicunt expetendis ut eum. No dicit deseruisse expetendis quo, natum reprimique sea ut.'
     },
     {
         name: 'Hulk',
         photo: "./images/hulk.jpg",
-        procce: 2500
+        price: 2500,
+        description: 'Lorem ipsum dolor sit amet, ei adolescens inciderint mel, duo ut harum tation animal. Ex eam augue percipit inciderint. In per erat mediocrem, tamquam convenire id pro. An dolor mandamus vituperatoribus eos.'
     },
     {
         name: 'Thor',
         photo: "./images/1575-thor.jpg",
-        procce: 5500
+        price: 5500,
+        description: 'Mei at nihil salutandi, ea has conceptam suscipiantur contentiones. Scripta debitis et nec, an aliquando accommodare usu. Ad porro etiam argumentum eum. Duo dolorem detracto ut. Eu fugit choro gubergren vel, vis ut regione insolens scriptorem, at his novum periculis laboramus.'
     },
     {
         name: 'IronMan',
         photo:  './images/ironMan.jpg',
-        price: 7500
+        price: 7500,
+        description: 'Mei at nihil salutandi, ea has conceptam suscipiantur contentiones. Scripta debitis et nec, an aliquando accommodare usu. Ad porro etiam argumentum eum. Duo dolorem detracto ut. Eu fugit choro gubergren vel, vis ut regione insolens scriptorem, at his novum periculis laboramus.'
     },
     {
         name: 'Potter',
         photo:  './images/HARRY-POTTER.jpg',
-        price: 125000
+        price: 125000,
+        description: 'Lorem ipsum dolor sit amet, ei adolescens inciderint mel, duo ut harum tation animal. Ex eam augue percipit inciderint. In per erat mediocrem, tamquam convenire id pro. An dolor mandamus vituperatoribus'
     },
     {
         name: 'Batman',
         photo:  './images/batman.jpg',
-        price: 35000
+        price: 35000,
+        description: 'Id vis ignota ridens, eos at nibh vidisse tibique. Ludus propriae nam an, ei sit amet mazim invenire, eam illud munere at. Ut mel ferri dicam appetere. Ei laudem reprimique percipitur his, dicunt expetendis ut eum. No dicit deseruisse expetendis quo, natum reprimique sea ut.'
     },
 ];
 let localHeroes = null;
@@ -49,6 +55,7 @@ if (localStorage.getItem('localHeroes')) {
             ...heroes,
             ...localHeroes.items
         ];
+        
     } else {
         localHeroes = null;
     }

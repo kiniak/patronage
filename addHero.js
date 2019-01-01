@@ -20,13 +20,14 @@ form.addEventListener("submit", function(e){
     //sprawdzic input type file
     //zmienic get element na query selector
 
-    
-    let name = document.getElementsByName("name")[0].value;
-    let photo = document.getElementsByName("picture")[0].value;
-    let price = document.getElementsByName("price")[0].value;
+    let form = document.querySelector('.form')
+    let name = form.name.value;
+    let photo = form.picture.value;
+    let price = form.price.value;
     //zmienic name inputa z description na cos innego i ustawic na 0 index
-    let description = document.getElementsByName("newDescription")[0].value;
+    let description = form.newDescription.value;
     //walidacja
+    
 
     //niepozwolic na dodanie istniejacego obiektu
 
@@ -49,6 +50,7 @@ form.addEventListener("submit", function(e){
     //uniemozliwic dodawanie istniejacego bohatera
     
     localStorage.setItem('localHeroes', JSON.stringify(localHeroes || newLocal));
-    debugger;
+    
+ 
   });
 
