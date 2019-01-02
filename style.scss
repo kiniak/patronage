@@ -9,7 +9,7 @@ body{
     font-family: $base__font-family;
 }
 
-.heros_description{
+.heros__description{
     display: none;
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -19,7 +19,7 @@ body{
     right: 0;
     bottom: 0;
     margin: auto;
-    .description_hero{
+    .description__hero{
         width: 100rem;
         height: 35rem;
         background-color: white;
@@ -31,40 +31,75 @@ body{
         bottom: 0;
         margin: auto;
         display: block;
-        .hero_about{
-         
-            display: flex;
-            .hero_noun{
+        .hero__about{
+            .hero__noun{
                 text-transform: uppercase;
                 font-size: 3.3rem;
                 letter-spacing: 1px;
-                .hero_noun-border{
+                .hero__noun-border{
                     border-bottom: 1px solid grey;
                     display: inline-block;
-                    padding-bottom: 2rem;
+                    padding-bottom: 1.5rem;
                 }
             }
-            .hero_img{
+            .hero__specification{
+                font-size: 1.6rem;
+                margin: 1rem 0 2rem 0;
+                color: #AAAAA8;
+                line-height: 1.3;
+            }
+            .hero__img{
                 margin: 0 3rem 2rem 3rem;
                 
             }
-            .hero_jpg{
+            .hero__jpg{
                 max-height: 30rem;          
             }  
-            .hero_text{
-                max-width: 50rem;
+            .hero__text{
+                max-width: 60rem;
+                margin-left: 2rem;
             }   
         }
-            .hero_close{
+            .hero__close{
             text-align: right;
             font-size: 1.5rem;
             margin: 1rem 1rem 0rem 0rem;
             color: grey;
         }
+            .hero__price{
+                display: inline-block;
+                border-top: 1px #AAAAA8 dashed;
+                border-bottom: 1px #AAAAA8 dashed;
+                padding: 1rem 0;
+                font-size: 2rem;
+                text-transform: uppercase;
+                color: grey;
+            }
+            .hero__buy{
+                margin-top: 2.4rem;
+                padding: 1.2rem 4rem;
+                background-color: #06AC50;
+                color: white;
+                text-transform: uppercase;
+                font-size: 1.4rem;
+            }
     }
-    &_on {
+    &__on {
         display: block;
     }
+}
+.navSmallScreen{
+    display: none;
+    z-index: 99;
+    position: fixed;
+    padding: 4rem 0 0 1rem;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    margin-top: 10rem;
+}
+.menuHamburger{
+    display: none;
 }
 .header{
     background: url("./images/home-slide01.jpg") bottom center no-repeat;
@@ -125,14 +160,61 @@ body{
                 color: red;
             }
             }
-        &__content{
+            
+       &__empty {
             font-size: 2.5rem;
             text-align: center;
             margin-top: 2.4rem;
             padding-bottom: 2rem;
+            display: block;
         }
+        &__empty__off{
+            display: none;
+        }
+
+        .basketHero__jpg{
+            width: 10rem;
+        }
+        .basketHero__about{
+            flex-wrap: nowrap;
+            margin-bottom: 2rem;
+            .basketHero__text{
+                margin: 0 2rem;
+                .basketHero__noun{
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                    color: grey;
+                    margin-bottom: 1rem;
+                }
+                .basketHero__specification{
+                    font-size: 1.2rem;
+                    color: grey;
+
+                }
+                .basketHero__remove{
+                    margin-top: 1rem;
+                    text-transform: uppercase;
+                    background-color: red;
+                    color: white;
+                    padding: 1rem 2rem;
+                    font-size: 1.2rem;
+                }
+                .basketHero__remove-span{
+                    padding-right: 1rem;
+                }
+                .basketHero__remove-i{
+                    border-left: 1px solid white;
+                    padding-left: 1rem;
+                }
+            }
+         
+        } 
+        
+        
     } 
+    
 }
+
 .heroes{
     margin-top: 6rem;
     justify-content: space-between;
@@ -167,4 +249,42 @@ body{
     color: white;
     margin-top: 1rem;
 
+}
+//media-queries MD
+@media screen and (min-width: 761px) and (max-width: 1024px){
+    html{
+        font-size: 50%;
+    }
+    .col-4 {
+        flex-basis: 41.6666%;
+    }
+}
+
+//media-queries Xs 
+@media only screen and (max-width: 760px){
+    html{
+        font-size: 60%;
+    }
+    .col-4 {
+        flex-basis: 91.6666%;
+        justify-content: center;
+    }
+
+    .header{
+        &__logo{
+            .header__logoImg{
+                width: 100px;
+            }
+        }
+        .header__nav{
+            display: none;
+        }
+        .menuHamburger{
+            display: inline-block;
+            font-size: 4rem;
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+        }
+    }
 }

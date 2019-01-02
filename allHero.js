@@ -11,37 +11,37 @@ let heroes = [
         name: 'Superman',
         photo:  './images/superman.jpg',
         price: 3500,
-        description: 'Id vis ignota ridens, eos at nibh vidisse tibique. Ludus propriae nam an, ei sit amet mazim invenire, eam illud munere at. Ut mel ferri dicam appetere. Ei laudem reprimique percipitur his, dicunt expetendis ut eum. No dicit deseruisse expetendis quo, natum reprimique sea ut.'
+        description: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.'
     },
     {
         name: 'Hulk',
         photo: "./images/hulk.jpg",
         price: 2500,
-        description: 'Lorem ipsum dolor sit amet, ei adolescens inciderint mel, duo ut harum tation animal. Ex eam augue percipit inciderint. In per erat mediocrem, tamquam convenire id pro. An dolor mandamus vituperatoribus eos.'
+        description: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.'
     },
     {
         name: 'Thor',
         photo: "./images/1575-thor.jpg",
         price: 5500,
-        description: 'Mei at nihil salutandi, ea has conceptam suscipiantur contentiones. Scripta debitis et nec, an aliquando accommodare usu. Ad porro etiam argumentum eum. Duo dolorem detracto ut. Eu fugit choro gubergren vel, vis ut regione insolens scriptorem, at his novum periculis laboramus.'
+        description: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.'
     },
     {
         name: 'IronMan',
         photo:  './images/ironMan.jpg',
         price: 7500,
-        description: 'Mei at nihil salutandi, ea has conceptam suscipiantur contentiones. Scripta debitis et nec, an aliquando accommodare usu. Ad porro etiam argumentum eum. Duo dolorem detracto ut. Eu fugit choro gubergren vel, vis ut regione insolens scriptorem, at his novum periculis laboramus.'
+        description: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.'
     },
     {
         name: 'Potter',
         photo:  './images/HARRY-POTTER.jpg',
         price: 125000,
-        description: 'Lorem ipsum dolor sit amet, ei adolescens inciderint mel, duo ut harum tation animal. Ex eam augue percipit inciderint. In per erat mediocrem, tamquam convenire id pro. An dolor mandamus vituperatoribus'
+        description: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.'
     },
     {
         name: 'Batman',
         photo:  './images/batman.jpg',
         price: 35000,
-        description: 'Id vis ignota ridens, eos at nibh vidisse tibique. Ludus propriae nam an, ei sit amet mazim invenire, eam illud munere at. Ut mel ferri dicam appetere. Ei laudem reprimique percipitur his, dicunt expetendis ut eum. No dicit deseruisse expetendis quo, natum reprimique sea ut.'
+        description: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.'
     },
 ];
 let localHeroes = null;

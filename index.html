@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="description" content="strona hero">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="grid.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>hero</title>
     <!--<link rel="shortcut icon" href="PNG/webkin.png" type="image/png">-->
@@ -15,14 +15,16 @@
 
   </head>
   <body>
-    <div class="heros_description"></div>
+    <div class="heros__description"></div>
 
     <header class="header container row">
       <div class="header__logo">
         <a href="#"><img class="header__logoImg" src="./images/logo.png"/></a>
       </div>
+      <div class="menuHamburger">
+        <i class="fas fa-bars"></i>
+      </div>
       <nav class="header__nav">
-
           <ul class="nav__list row">
             <li class="nav__item"><a class="item__link "href="addHero.html">dodaj herosa</a></li>
             <li class="nav__item">edytuj herosa</li>
@@ -30,8 +32,16 @@
             <li class="nav__item">wyczyść bazę</li>
             <li class="nav__item nav__item--last">wczytaj herosów</li>
           </ul>
-
       </nav>
+      <div class="navSmallScreen">
+        <ul class="nav__list row">
+          <li class="nav__item"><a class="item__link "href="addHero.html">dodaj herosa</a></li>
+          <li class="nav__item">edytuj herosa</li>
+          <li class="nav__item">usuń herosa</li>
+          <li class="nav__item">wyczyść bazę</li>
+          <li class="nav__item nav__item--last">wczytaj herosów</li>
+        </ul>
+      </div>
     </header>
     
     <!--shop section-->
@@ -42,10 +52,12 @@
               <h1 class="basket__heading">Koszyk</h1>
               <div class="basket__element">
                 <p class="basket__text">Do zapłaty</p>
-                <div class="basket__amount">0.00 zł</div>
+                <div class="basket__amount"><span class="basket__amount-price">0.00</span> zł</div>
               </div> 
             </div>
-            <div class="basket__content">Twój koszyk jest pusty</div>
+            <div class="basket__content row">
+              <div class="basket__empty">Twój koszyk jest pusty</div>
+            </div>
           </div>
       </section>
 
