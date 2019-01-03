@@ -108,6 +108,8 @@ body {
 
 .shop .basket {
   margin-top: 4.3rem; }
+  .shop .basket__position .basket__content {
+    margin-top: 2rem; }
   .shop .basket__position {
     border: 1px #11035f solid;
     padding: 1rem; }
@@ -126,10 +128,12 @@ body {
     .shop .basket__element .basket__amount {
       display: inline;
       color: red; }
+  .shop .basket .basket__empty {
+    margin: 2.4rem auto 0 auto; }
   .shop .basket__empty {
     font-size: 2.5rem;
     text-align: center;
-    margin-top: 2.4rem;
+    margin: 2.4rem;
     padding-bottom: 2rem;
     display: block; }
   .shop .basket__empty__off {
@@ -187,16 +191,76 @@ body {
   color: white;
   margin-top: 1rem; }
 
-@media screen and (min-width: 761px) and (max-width: 1024px) {
-  html {
-    font-size: 50%; }
+@media screen and (min-width: 999px) and (max-width: 1140px) {
+  .header__logoImg {
+    margin-top: 1.4rem;
+    width: 120px; }
+  .header .nav__list {
+    margin-top: 3.4rem; } }
+@media screen and (min-width: 761px) and (max-width: 1000px) {
+  .col-5-md {
+    flex-basis: 45%; }
 
-  .col-4 {
-    flex-basis: 41.6666%; } }
-@media only screen and (max-width: 760px) {
-  html {
-    font-size: 60%; }
+  .heros__description .description__hero {
+    width: 70rem;
+    height: 35rem; }
+    .heros__description .description__hero .hero__about .hero__text {
+      width: 50%; }
+    .heros__description .description__hero .hero__about .hero__specification {
+      font-size: 1.4rem; }
 
+  .header__logoImg {
+    margin-top: 1.4rem;
+    width: 120px; }
+  .header .nav__list {
+    margin-top: 3.4rem; }
+  .header .nav__item {
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold; }
+  .header .nav__item--last {
+    border-right: 0;
+    margin-right: 1rem; } }
+@media screen and (min-width: 375px) and (max-width: 760px) {
+  .col-1-s {
+    flex-basis: 91.6666%;
+    justify-content: center; }
+
+  .header__logo .header__logoImg {
+    width: 100px; }
+  .header .header__nav {
+    display: none; }
+  .header .menuHamburger {
+    display: inline-block;
+    font-size: 4rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem; }
+
+  .heros__description .description__hero {
+    width: 35rem;
+    height: 35rem; }
+    .heros__description .description__hero .hero__about .hero__img {
+      display: none; }
+    .heros__description .description__hero .hero__about .hero__text {
+      width: 80%; }
+      .heros__description .description__hero .hero__about .hero__text .hero__noun {
+        font-size: 2rem; }
+    .heros__description .description__hero .hero__about .hero__specification {
+      font-size: 1.4rem; }
+
+  .shop .basket .basket__position .basketText__position {
+    display: block; }
+    .shop .basket .basket__position .basketText__position .basket__heading {
+      display: inline-block; }
+    .shop .basket .basket__position .basketText__position .basket__element {
+      margin: 2.5rem 0; }
+  .shop .basket .basket__position .basket__content {
+    justify-content: space-around; }
+
+  .heroes {
+    justify-content: center; } }
+@media only screen and (max-width: 376px) {
   .col-4 {
     flex-basis: 91.6666%;
     justify-content: center; }
@@ -210,6 +274,34 @@ body {
     font-size: 4rem;
     position: absolute;
     top: 2rem;
-    right: 2rem; } }
+    right: 2rem; }
+
+  .heros__description .description__hero {
+    width: 30rem;
+    height: 20rem; }
+    .heros__description .description__hero .hero__about .hero__img {
+      display: none; }
+    .heros__description .description__hero .hero__about .hero__text {
+      width: 80%; }
+      .heros__description .description__hero .hero__about .hero__text .hero__noun {
+        font-size: 2rem;
+        margin-bottom: 2rem; }
+      .heros__description .description__hero .hero__about .hero__text .hero__specification {
+        display: none; }
+    .heros__description .description__hero .hero__about .hero__specification {
+      font-size: 1.4rem; }
+
+  .shop .basket .basket__position .basketText__position {
+    display: block; }
+    .shop .basket .basket__position .basketText__position .basket__heading {
+      display: inline-block; }
+    .shop .basket .basket__position .basketText__position .basket__element {
+      margin: 2.5rem 0;
+      font-size: 3rem; }
+  .shop .basket .basket__position .basket__content {
+    justify-content: space-around; }
+
+  .heroes {
+    justify-content: center; } }
 
 /*# sourceMappingURL=style.css.map */

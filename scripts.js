@@ -32,9 +32,9 @@ class Basket {
             description: hero.description.slice(0, 116)
         };
         return `
-            <div class="basketHero col-4">
+            <div class="basketHero col-4 col-1-s col-5-md">
                         <div class='basketHero__about row'>
-                            <div class='basketHero__img'><img class='basketHero__jpg' src="${hero.photo}"></div>
+                            <div class='basketHero__img'><img class='basketHero__jpg' src="${hero.image}"></div>
                             <div class='basketHero__text'>
                                 <h2 class='basketHero__noun'>${hero.name}</h2>
                                 <p class='basketHero__specification'>${hero.description}</p>
@@ -51,7 +51,7 @@ class Hero {
     constructor(hero){
         this.name = hero.name;
         //dodac placeholder
-        this.photo = hero.photo; 
+        this.image = hero.image; 
         this.price= hero.price;
         this.description = hero.description;  
     }
@@ -59,7 +59,7 @@ class Hero {
 
         return `
      
-        <img class="hero__picture" src="${this.photo}" data-hero="${this.name}">
+        <img class="hero__picture" src="${this.image}" data-hero="${this.name}">
         <h2 class="hero__name">${this.name}</h2>
         <p class="hero__rent">cena wynajmu ${this.price} zł</p>
    
@@ -73,7 +73,7 @@ let getModalTemplate = (hero) => {
     
             <div class='hero__close'><i class="fas fa-times"></i></div>
                 <div class='hero__about row'>
-                    <div class='hero__img'><img class='hero__jpg' src="${hero.photo}"></div>
+                    <div class='hero__img'><img class='hero__jpg' src="${hero.image}"></div>
                     <div class='hero__text'>
                         <h2 class='hero__noun'><span class='hero_noun-border'>I'</span>m the ${hero.name}!</h2>
                         <p class='hero__specification'>${hero.description}</p>
@@ -94,7 +94,7 @@ let arrHeroes = heroes.map(hero => new Hero(hero));
         modalContainer = document.querySelector('.heros__description'),
         contentButton = false;
        
-    heroesContainer.innerHTML = arrHeroes.reduce((prev, curr) => `${prev}<div class='hero col-4'>${curr.getTemplate()}</div>`, '');
+    heroesContainer.innerHTML = arrHeroes.reduce((prev, curr) => `${prev}<div class='hero col-4 col-1-s col-5-md'>${curr.getTemplate()}</div>`, '');
     heroesContainer.addEventListener('click', (e) => {
         let element = e.target;
         if (element && element.classList.contains('hero__picture')) {

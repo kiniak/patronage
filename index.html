@@ -1,8 +1,7 @@
 <!doctype html>
-<html>
+<html lang="pl-PL">
   <head>
     <link rel="stylesheet" type="text/css" href="reset.css">
-
     <meta charset="utf-8">
     <meta name="description" content="strona hero">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,21 +11,19 @@
     <title>hero</title>
     <!--<link rel="shortcut icon" href="PNG/webkin.png" type="image/png">-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
   </head>
   <body>
     <div class="heros__description"></div>
-
     <header class="header container row">
       <div class="header__logo">
-        <a href="#"><img class="header__logoImg" src="./images/logo.png"/></a>
+        <a href="#"><img class="header__logoImg" src="./images/logo.png" alt="logo"/></a>
       </div>
       <div class="menuHamburger">
         <i class="fas fa-bars"></i>
       </div>
       <nav class="header__nav">
           <ul class="nav__list row">
-            <li class="nav__item"><a class="item__link "href="addHero.html">dodaj herosa</a></li>
+            <li class="nav__item"><a class="item__link" href="addHero.html">dodaj herosa</a></li>
             <li class="nav__item">edytuj herosa</li>
             <li class="nav__item">usuń herosa</li>
             <li class="nav__item">wyczyść bazę</li>
@@ -35,7 +32,7 @@
       </nav>
       <div class="navSmallScreen">
         <ul class="nav__list row">
-          <li class="nav__item"><a class="item__link "href="addHero.html">dodaj herosa</a></li>
+          <li class="nav__item"><a class="item__link" href="addHero.html">dodaj herosa</a></li>
           <li class="nav__item">edytuj herosa</li>
           <li class="nav__item">usuń herosa</li>
           <li class="nav__item">wyczyść bazę</li>
@@ -43,13 +40,12 @@
         </ul>
       </div>
     </header>
-    
     <!--shop section-->
     <article class="shop container-fluid">
       <section class="basket">
           <div class="basket__position">
             <div class="basketText__position row">
-              <h1 class="basket__heading">Koszyk</h1>
+              <h2 class="basket__heading">Koszyk</h2>
               <div class="basket__element">
                 <p class="basket__text">Do zapłaty</p>
                 <div class="basket__amount"><span class="basket__amount-price">0.00</span> zł</div>
@@ -60,19 +56,16 @@
             </div>
           </div>
       </section>
-
        <!--heroes section-->
       <section class="heroes row">
-         
       </section>
     </article>
-
     <footer class="footer container">
       <p class="footer__text">
         Need a Hero - Pure JS/CSS Aplikacja do ćwiczeń nabytej wiedzy o JavaSript
       </p>
     </footer>     
-    <script type="text/javascript" src="allHero.js"></script>
-    <script type="text/javascript" src="scripts.js"></script>
+    <script src="allHero.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
