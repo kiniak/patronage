@@ -166,21 +166,21 @@ body {
         border-left: 1px solid white;
         padding-left: 1rem; }
 
-.heroes {
+.heros {
   margin-top: 6rem;
   justify-content: space-between; }
-  .heroes .hero--row {
+  .heros .hero--row {
     margin-top: 4rem; }
-  .heroes .hero {
+  .heros .hero {
     margin-bottom: 0.7rem;
     text-align: center; }
-    .heroes .hero__name {
+    .heros .hero__name {
       font-size: 2.2rem;
       margin-top: 0.3rem; }
-    .heroes .hero__rent {
+    .heros .hero__rent {
       font-size: 1.3rem;
       margin: 0rem 0 0rem 0; }
-    .heroes .hero__picture {
+    .heros .hero__picture {
       width: 100%; }
 
 .footer {
@@ -194,7 +194,7 @@ body {
 @media screen and (min-width: 999px) and (max-width: 1140px) {
   .header__logoImg {
     margin-top: 1.4rem;
-    width: 120px; }
+    width: 140px; }
   .header .nav__list {
     margin-top: 3.4rem; } }
 @media screen and (min-width: 761px) and (max-width: 1000px) {
@@ -258,7 +258,7 @@ body {
   .shop .basket .basket__position .basket__content {
     justify-content: space-around; }
 
-  .heroes {
+  .heros {
     justify-content: center; } }
 @media only screen and (max-width: 376px) {
   .col-4 {
@@ -301,7 +301,7 @@ body {
   .shop .basket .basket__position .basket__content {
     justify-content: space-around; }
 
-  .heroes {
+  .heros {
     justify-content: center; } }
 
 /*# sourceMappingURL=style.css.map */

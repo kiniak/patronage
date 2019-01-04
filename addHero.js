@@ -1,47 +1,46 @@
-//pobierac istniejacych bohaterow
-//sprawdzic localstorage czy juz ktos cos dodal i pobrac to i dozucic do wszystkiego
+let addName = document.getElementsByName("name").value;
 
-let addName= document.getElementsByName('name').value;
+let addPicture = document.getElementsByName("image").value;
 
-let addPicture= document.getElementsByName('picture').value;
+let buttonAddHero = document.querySelector('.addHeros__button');
+let form = document.querySelector('#hero_form');
 
-let buttonAddHero =  document.querySelector('.addHeroes__button');
-let form =  document.querySelector('#hero__form');
+form.addEventListener("submit", function (e) {
 
-
-form.addEventListener('submit', function(e){
-    
 
     e.preventDefault();
 
+
     let form = document.querySelector('.form')
     let name = form.name.value;
-    let image = form.picture.value;
+    let image = form.image.value;
     let price = form.price.value;
-   
+
     let description = form.newDescription.value;
+
 
     let hero = {
         name,
         image,
         price,
-        description,
-        isAvailable
+        description
     };
     let newLocal = null;
 
-    if (localHeroes) {
-        localHeroes.items.push(hero)
+    if (localHeros) {
+        localHeros.items.push(hero)
     } else {
         newLocal = {
             items: [hero]
         }
     }
 
-    //uniemozliwic dodawanie istniejacego bohatera
-    
-    localStorage.setItem('localHeroes', JSON.stringify(localHeroes || newLocal));
-    
- 
-  });
+    localStorage.setItem('localHeros', JSON.stringify(localHeros || newLocal));
+
+    form.name.value = '';
+    form.image.value = '';
+    form.price.value = '';
+    form.newDescription.value = '';
+
+});
 

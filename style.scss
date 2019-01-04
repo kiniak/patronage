@@ -219,11 +219,10 @@ body{
         } 
         
         
-    } 
-    
+    }  
 }
 
-.heroes{
+.heros{
     margin-top: 6rem;
     justify-content: space-between;
     .hero--row{
@@ -247,8 +246,6 @@ body{
     }
 }
 
-
-
 .footer{
     text-align: center;
     background-color: #271E54;
@@ -263,7 +260,7 @@ body{
     .header{
         &__logoImg{
             margin-top: 1.4rem;
-            width: 120px;
+            width: 140px;
         }
         .nav__list{
             margin-top: 3.4rem;
@@ -375,7 +372,7 @@ body{
             }
         }
     } 
-    .heroes{
+    .heros{
         justify-content: center;
     }
 }
@@ -447,7 +444,7 @@ body{
             }
         }
     } 
-    .heroes{
+    .heros{
         justify-content: center;
     }
 }

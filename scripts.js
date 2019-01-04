@@ -1,4 +1,3 @@
-//Wyniesc do innego pliku od tad do ...
 class Basket {
     constructor(options){
         this.price = 0;
@@ -33,14 +32,14 @@ class Basket {
         };
         return `
             <div class="basketHero col-4 col-1-s col-5-md">
-                        <div class='basketHero__about row'>
-                            <div class='basketHero__img'><img class='basketHero__jpg' src="${hero.image}"></div>
-                            <div class='basketHero__text'>
-                                <h2 class='basketHero__noun'>${hero.name}</h2>
-                                <p class='basketHero__specification'>${hero.description}</p>
-                                <button class='basketHero__remove' data-hero="${hero.name}"><span class='basketHero__remove-span'>usuń z koszyka</span><span class="basketHero__remove-i"><i class="fas fa-times"></i></span></button>
-                            </div>
-                        </div>
+                <div class='basketHero__about row'>
+                    <div class='basketHero__img'><img class='basketHero__jpg' src="${hero.image}"></div>
+                    <div class='basketHero__text'>
+                        <h2 class='basketHero__noun'>${hero.name}</h2>
+                        <p class='basketHero__specification'>${hero.description}</p>
+                        <button class='basketHero__remove' data-hero="${hero.name}"><span class='basketHero__remove-span'>usuń z koszyka</span><span class="basketHero__remove-i"><i class="fas fa-times"></i></span></button>
+                    </div>
+                 </div>
                     
             </div>
         `
@@ -50,27 +49,22 @@ class Basket {
 class Hero {
     constructor(hero){
         this.name = hero.name;
-        //dodac placeholder
         this.image = hero.image; 
         this.price= hero.price;
         this.description = hero.description;  
     }
     getTemplate(){
-
         return `
-     
         <img class="hero__picture" src="${this.image}" data-hero="${this.name}">
         <h2 class="hero__name">${this.name}</h2>
         <p class="hero__rent">cena wynajmu ${this.price} zł</p>
-   
         `;
     }   
 }
 
 let getModalTemplate = (hero) => {
-    return `
-    <div class="description__hero">
-    
+        return `
+        <div class="description__hero">
             <div class='hero__close'><i class="fas fa-times"></i></div>
                 <div class='hero__about row'>
                     <div class='hero__img'><img class='hero__jpg' src="${hero.image}"></div>
@@ -81,24 +75,23 @@ let getModalTemplate = (hero) => {
                         <button class='hero__buy' data-hero="${hero.name}">dodaj do koszyka</button>
                     </div>
                 </div>
-            
-    </div>
+        </div>
     `
 }
 
 
-let arrHeroes = heroes.map(hero => new Hero(hero));
+let arrHeros = heros.map(hero => new Hero(hero));
 
 
-    let heroesContainer = document.querySelector(".heroes"),
+    let herosContainer = document.querySelector(".heros"),
         modalContainer = document.querySelector('.heros__description'),
         contentButton = false;
        
-    heroesContainer.innerHTML = arrHeroes.reduce((prev, curr) => `${prev}<div class='hero col-4 col-1-s col-5-md'>${curr.getTemplate()}</div>`, '');
-    heroesContainer.addEventListener('click', (e) => {
+    herosContainer.innerHTML = arrHeros.reduce((prev, curr) => `${prev}<div class='hero col-4 col-1-s col-5-md'>${curr.getTemplate()}</div>`, '');
+    herosContainer.addEventListener('click', (e) => {
         let element = e.target;
         if (element && element.classList.contains('hero__picture')) {
-            let hero = arrHeroes.find((hero) => hero.name === element.dataset.hero);
+            let hero = arrHeros.find((hero) => hero.name === element.dataset.hero);
             modalContainer.innerHTML = getModalTemplate(hero);
             modalContainer.classList.add('heros__description__on');
         };
@@ -121,9 +114,9 @@ let arrHeroes = heroes.map(hero => new Hero(hero));
     }
 
 
-    let itemsContainer = document.querySelector('.basket__content');
-    let priceContainer = document.querySelector('.basket__amount-price');
-    let HeroBasket = new Basket({
+let itemsContainer = document.querySelector('.basket__content');
+let priceContainer = document.querySelector('.basket__amount-price');
+let HeroBasket = new Basket({
         itemsContainer,
         priceContainer
     });
@@ -131,21 +124,19 @@ let arrHeroes = heroes.map(hero => new Hero(hero));
     modalContainer.addEventListener('click', (e) => {
         let element = e.target;
         if (element && element.classList.contains('hero__buy')) {
-            console.log(element);
-            let hero = arrHeroes.find((hero) => hero.name === element.dataset.hero);
+            let hero = arrHeros.find((hero) => hero.name === element.dataset.hero);
             if (HeroBasket.addItem(hero)) {
                 modalContainer.classList.remove('heros__description__on');
             } else {
                 element.textContent = 'Znajduje się już w koszyku!';
             }          
         };
-      
     });
     
     itemsContainer.addEventListener('click', (e) => {
         let element = e.target.closest('.basketHero__remove');
         if (element) {
-            let hero = arrHeroes.find((hero) => hero.name === element.dataset.hero);
+            let hero = arrHeros.find((hero) => hero.name === element.dataset.hero);
             HeroBasket.removeItem(hero);
         }
     });

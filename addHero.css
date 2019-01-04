@@ -4,15 +4,28 @@ html {
 body {
   font-family: "Open Sans", sans-serif; }
 
+.navSmallScreen {
+  display: none;
+  z-index: 99;
+  position: fixed;
+  padding: 4rem 0 0 1rem;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  margin-top: 10rem; }
+
+.menuHamburger {
+  display: none; }
+
 .header {
   background: url("images/home-slide01.jpg") bottom center no-repeat;
   min-height: 12rem;
   background-position: center top; }
-  .header .header__logo {
+  .header__logo {
     margin: 2rem 0 0 2rem; }
-  .header .header__logoImg {
+  .header__logoImg {
     width: 290px; }
-  .header .header__nav {
+  .header__nav {
     margin-left: auto; }
   .header .nav__list {
     margin-top: 4.7rem; }
@@ -29,31 +42,31 @@ body {
     border-right: 0;
     margin-right: 2.7rem; }
 
-.addHeroes {
+.addHeros {
   padding: 3rem 2rem; }
-  .addHeroes .addHeroes__add {
+  .addHeros .addHeros__add {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 38%;
     margin-top: 3rem;
     margin: 0 auto; }
-    .addHeroes .addHeroes__add .addHeroes__heading {
+    .addHeros .addHeros__add .addHeros__heading {
       font-size: 3rem;
       text-align: center;
       margin-top: 4.3rem;
       padding: 6.3rem 0 2rem 0; }
-    .addHeroes .addHeroes__add form-error {
+    .addHeros .addHeros__add form-error {
       color: red; }
-    .addHeroes .addHeroes__add .form__input {
+    .addHeros .addHeros__add .form__input {
       border: none;
       border-bottom: 1px solid gray;
       margin: 1.4rem 6rem;
       font-size-adjust: 1.7rem;
       padding: 0.8rem;
       letter-spacing: 1px; }
-    .addHeroes .addHeroes__add .form__input--last {
+    .addHeros .addHeros__add .form__input--last {
       margin-top: 2rem;
       padding-bottom: 3rem; }
-    .addHeroes .addHeroes__add .addHeroes__button {
+    .addHeros .addHeros__add .addHeros__button {
       background-color: #5C93CB;
       color: white;
       padding: 1rem 4.5rem;
@@ -69,5 +82,65 @@ body {
   padding: 2rem;
   color: white;
   margin-top: 1rem; }
+
+@media screen and (min-width: 999px) and (max-width: 1140px) {
+  .header .header__logoImg {
+    width: 155px; }
+
+  .header .nav__list {
+    margin-top: 3.4rem; } }
+@media screen and (min-width: 761px) and (max-width: 1000px) {
+  .header .header__logoImg {
+    margin-top: 1.4rem;
+    width: 120px; }
+
+  .header .nav__list {
+    margin-top: 3.4rem; }
+
+  .header .nav__item {
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold; }
+
+  .header .nav__item--last {
+    border-right: 0;
+    margin-right: 1rem; }
+
+  .addHeros .addHeros__add {
+    width: 40%; } }
+@media screen and (min-width: 375px) and (max-width: 760px) {
+  .header__logo .header__logoImg {
+    width: 100px; }
+  .header .header__nav {
+    display: none; }
+  .header .menuHamburger {
+    display: inline-block;
+    font-size: 4rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem; }
+
+  .addHeros .addHeros__add .form__input {
+    margin: 1.4rem 2rem; }
+
+  .addHeros .addHeros__add {
+    width: 80%; } }
+@media only screen and (max-width: 376px) {
+  .header__logo .header__logoImg {
+    width: 100px; }
+  .header .header__nav {
+    display: none; }
+  .header .menuHamburger {
+    display: inline-block;
+    font-size: 4rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem; }
+
+  .addHeros .addHeros__add .form__input {
+    margin: 1.4rem 2rem; }
+
+  .addHeros .addHeros__add {
+    width: 80%; } }
 
 /*# sourceMappingURL=addHero.css.map */
