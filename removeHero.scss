@@ -54,6 +54,10 @@ body{
         margin-right: 2.7rem;
     }
 }
+#removeHeros{
+    width: 80%;
+    margin: o auto;
+}
 .addHeros{
     padding: 3rem 2rem;
     .addHeros__add{
@@ -61,7 +65,6 @@ body{
         width: 38%;
         margin-top: 3rem;
         margin: 0 auto;
-      
         .addHeros__heading{
             font-size: 3rem;
             text-align: center;

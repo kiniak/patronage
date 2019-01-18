@@ -42,6 +42,10 @@ body {
     border-right: 0;
     margin-right: 2.7rem; }
 
+#removeHeros {
+  width: 80%;
+  margin: o auto; }
+
 .addHeros {
   padding: 3rem 2rem; }
   .addHeros .addHeros__add {
@@ -146,4 +150,4 @@ body {
   .addHeros .addHeros__add {
     width: 80%; } }
 
-/*# sourceMappingURL=addHero.css.map */
+/*# sourceMappingURL=removeHero.css.map */

@@ -21,9 +21,9 @@
       </div>
       <nav class="header__nav">
         <ul class="nav__list row">
-          <li class="nav__item">dodaj herosa</li>
-          <li class="nav__item">edytuj herosa</li>
-          <li class="nav__item">usuń herosa</li>
+          <li class="nav__item"><a class="item__link" href="addHero.html">dodaj herosa</a></li>
+          <li class="nav__item"><a class="item__link" href="editHero.html">edytuj herosa</a></li>
+          <li class="nav__item"><a class="item__link" href="removeHero.html">usuń herosa</a></li>
           <li class="nav__item">wyczyść bazę</li>
           <li class="nav__item nav__item--last">wczytaj herosów</li>
         </ul>
@@ -40,13 +40,12 @@
     </header>
     <section class="addHeros container">
       <div class="addHeros__add">
-        <h1 class="addHeros__heading">Dodaj Herosa</h1>
+        <h1 class="addHeros__heading">Usuń Herosa :(</h1>
         <form class="form row" id="hero_form">
-          <input required class="form__input col-11" type="text" name="name" placeholder="Nazwa Bohatera" data-error="podaj nazwe Herosa">
-          <input required class="form__input col-11" type="url" name="image" placeholder="Adres/nazwa zdjęcia" data-error="nie dołączono zdjęcia">
-          <input required class="form__input col-11" type="number" name="price" min="1" placeholder="cena wynajmu/h"  data-error="podaj cene"> 
-          <input required class="form__input form__input--last col-11" name="newDescription" type="textarea" placeholder="Opis Bohareta" data-error="opisz bohatera min 10 znaków">
-          <button required class="addHeros__button" type="Submit">Submit</button>
+          <select id="removeHeros" name="heros">
+            <option>Wczytuje...</option>
+          </select>
+          <button required class="addHeros__button" type="button">Submit</button>
         </form> 
       </div>
     </section>
@@ -55,6 +54,6 @@
         Need a Hero - Pure JS/CSS Aplikacja do ćwiczeń nabytej wiedzy o JavaSript
       </p>
     </footer>     
-    <script type="text/javascript" src="addHero.js"></script>
+    <script type="text/javascript" src="removeHero.js"></script>
   </body>
 </html>

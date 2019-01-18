@@ -2,8 +2,17 @@ let addName = document.getElementsByName("name").value;
 
 let addPicture = document.getElementsByName("image").value;
 
+
+
 let buttonAddHero = document.querySelector('.addHeros__button');
 let form = document.querySelector('#hero_form');
+let clear_form = (form) => {
+    form.name.value = '';
+    form.image.value = '';
+    form.price.value = '';
+    form.newDescription.value = '';
+}
+
 
 form.addEventListener("submit", function (e) {
 
@@ -25,22 +34,35 @@ form.addEventListener("submit", function (e) {
         price,
         description
     };
-    let newLocal = null;
+    // let newLocal = null;
 
-    if (localHeros) {
-        localHeros.items.push(hero)
-    } else {
-        newLocal = {
-            items: [hero]
-        }
-    }
+    // if (localHeros) {
+    //     localHeros.items.push(hero)
+    // } else {
+    //     newLocal = {
+    //         items: [hero]
+    //     }
+    // }
 
-    localStorage.setItem('localHeros', JSON.stringify(localHeros || newLocal));
+    // localStorage.setItem('localHeros', JSON.stringify(localHeros || newLocal));
 
-    form.name.value = '';
-    form.image.value = '';
-    form.price.value = '';
-    form.newDescription.value = '';
+    fetch('http://localhost:3000/heroes', {
+        method: 'POST', 
+        body: JSON.stringify(hero),
+        headers:{
+            'Content-Type': 'application/json'
+        }})
+        .then(response => response.json())
+        .then(response => {
+            alert(`Udało się zapisać bohatera ${response.name}`)
+            clear_form(form)
+        })
+        .catch(error => {
+            console.log(error); 
+            alert(`Nie mozna zapisac bohatera ${hero.name}`)
+        })
+
+    // clear_form(form);
 
 });
 

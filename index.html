@@ -17,30 +17,32 @@
       <div class="header__logo">
         <a href="#"><img class="header__logoImg" src="./images/logo.png" alt="logo"/></a>
       </div>
-      <div class="menuHamburger">
-        <i class="fas fa-bars"></i>
-      </div>
       <nav class="header__nav">
         <ul class="nav__list row">
           <li class="nav__item"><a class="item__link" href="addHero.html">dodaj herosa</a></li>
-          <li class="nav__item">edytuj herosa</li>
-          <li class="nav__item">usuń herosa</li>
+          <li class="nav__item"><a class="item__link" href="editHero.html">edytuj herosa</a></li>
+          <li class="nav__item"><a class="item__link" href="removeHero.html">usuń herosa</a></li>
           <li class="nav__item">wyczyść bazę</li>
           <li class="nav__item nav__item--last">wczytaj herosów</li>
         </ul>
       </nav>
       <div class="navSmallScreen">
-        <ul class="nav__list row">
-          <li class="nav__item"><a class="item__link" href="addHero.html">dodaj herosa</a></li>
-          <li class="nav__item">edytuj herosa</li>
-          <li class="nav__item">usuń herosa</li>
-          <li class="nav__item">wyczyść bazę</li>
-          <li class="nav__item nav__item--last">wczytaj herosów</li>
-        </ul>
+          <div class="menuHamburger">
+              <i class="fas fa-bars"></i>
+          </div>
+          <div class="navSmallScreen__site">
+            <ul class="site__list">
+                <li class="site__item"><a class="item__link" href="addHero.html">dodaj herosa</a></li>
+                <li class="site__item"><a class="item__link" href="editHero.html">edytuj herosa</a></li>
+                <li class="site__item">usuń herosa</li>
+                <li class="site__item">wyczyść bazę</li>
+                <li class="site__item nav__item--last">wczytaj herosów</li>
+              </ul> 
+          </div>
       </div>
     </header>
     <!--shop section-->
-    <article class="shop container-fluid">
+    <article class="shop containers-fluid">
       <section class="basket">
         <div class="basket__position">
           <div class="basketText__position row">
@@ -64,7 +66,6 @@
         Need a Hero - Pure JS/CSS Aplikacja do ćwiczeń nabytej wiedzy o JavaSript
       </p>
     </footer>     
-    <script src="allHero.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>
