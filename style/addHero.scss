@@ -10,20 +10,55 @@ body{
     font-family: $base__font-family;
 }
 .navSmallScreen{
-    display: none;
-    z-index: 99;
+    z-index: 9;
     position: fixed;
-    padding: 4rem 0 0 1rem;
-    top: 0;
+    padding: 1rem 0 0 1rem;
+
     background: rgba(255, 255, 255, 0.9);
     width: 100%;
-    margin-top: 10rem;
+  
+    &__site{
+        position: absolute;
+        background: rgba(255, 255, 255, 0.9);
+      
+        right: 0;
+        transform: translateX(100%);
+        transition: 2s transform ease-in-out;
+    .site__list{
+        text-decoration: none;
+        margin: 0 1rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        .site__item{
+            padding: 2rem 0;
+            text-transform: uppercase;
+            color: black;
+            font-size: 2rem;
+        }
+        .item__link{
+            text-decoration: none;
+            width: 100%;
+            height: 100%;;
+            color: black;
+       
+        }
+    }
+
+    }
+ 
+}
+.navSmallScreen .navSmallScreen__site-toggle{
+    transform: translateX(0);
 }
 .menuHamburger{
+    z-index: 99;
+    display: none;
+}
+.navSmallScreen__site{
     display: none;
 }
 .header{
-    background: url("images/home-slide01.jpg") bottom center no-repeat;
+    background: url("../images/home-slide01.jpg") bottom center no-repeat;
     min-height: 12rem;
     background-position: center top;
     &__logo{
@@ -98,10 +133,7 @@ body{
         }
     
 }
-#select_hero{
-    width: 80%;
-    margin: 0 auto;
-}
+
 .footer{
     text-align: center;
     background-color: #271E54;
@@ -145,7 +177,16 @@ body{
 
 /*media-queries S*/
 @media screen and (min-width: 375px) and (max-width: 760px){
- 
+    .navSmallScreen__site{
+        display: inline-block;
+    }
+    .menuHamburger{
+        display: inline-block;
+        font-size: 4rem;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
     .header{
         &__logo{
             .header__logoImg{
@@ -155,13 +196,7 @@ body{
         .header__nav{
             display: none;
         }
-        .menuHamburger{
-            display: inline-block;
-            font-size: 4rem;
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-        }
+
     }
     .addHeros .addHeros__add .form__input{
         margin: 1.4rem 2rem;
@@ -182,6 +217,9 @@ body{
         }
         .header__nav{
             display: none;
+        }
+        .navSmallScreen__site{
+            display: inline-block;
         }
         .menuHamburger{
             display: inline-block;

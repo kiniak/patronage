@@ -5,7 +5,7 @@ let addPicture = document.getElementsByName("image").value;
 
 
 let buttonAddHero = document.querySelector('.addHeros__button');
-let form = document.querySelector('#hero_form');
+const form = document.querySelector('#hero_form');
 let clear_form = (form) => {
     form.name.value = '';
     form.image.value = '';
@@ -20,7 +20,7 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
 
 
-    let form = document.querySelector('.form')
+    const form = document.querySelector('.form')
     let name = form.name.value;
     let image = form.image.value;
     let price = form.price.value;
@@ -34,17 +34,6 @@ form.addEventListener("submit", function (e) {
         price,
         description
     };
-    // let newLocal = null;
-
-    // if (localHeros) {
-    //     localHeros.items.push(hero)
-    // } else {
-    //     newLocal = {
-    //         items: [hero]
-    //     }
-    // }
-
-    // localStorage.setItem('localHeros', JSON.stringify(localHeros || newLocal));
 
     fetch('http://localhost:3000/heroes', {
         method: 'POST', 
@@ -62,7 +51,11 @@ form.addEventListener("submit", function (e) {
             alert(`Nie mozna zapisac bohatera ${hero.name}`)
         })
 
-    // clear_form(form);
-
 });
 
+const menuHamburger = document.querySelector('.menuHamburger');
+const navSmallScreen__site = document.querySelector('.navSmallScreen__site');
+
+menuHamburger.addEventListener('click', function(){
+    navSmallScreen__site.classList.toggle('navSmallScreen__site-toggle');
+  });

@@ -1,31 +1,55 @@
 (function () {
-
     class Basket {
         constructor(options){
             this.price = 0;
             this.items = [];
             this.itemsContainer = options.itemsContainer;
             this.priceContainer = options.priceContainer;
+            this.importFromLocalStorage();
+        }
+        importFromLocalStorage() {
+            let heros = localStorage.getItem('basketItems');
+            if(!heros) return;
+            try {
+                heros = JSON.parse(heros)
+            } catch (e) {
+                return;
+            }
+            if (!heros.items || !heros.items.length) return;
+            this.items = [...this.items, ...heros.items]
+            this.generateBasketTemplate()
+        }
+        exportToLocalStorage() {
+            localStorage.setItem('basketItems', JSON.stringify({items: this.items}))
         }
         addItem(item) {
             if (this.items.find(i => i.name === item.name)) return false;
             let price = Number(item.price);
             if (Number.isNaN(price)) return false;
-            this.price += price;
-            if (!this.items.length) this.itemsContainer.innerHTML = '';
+            // this.price += price;
             this.items.push(item);
-            this.itemsContainer.innerHTML += this.itemTemplate(item);
-            this.priceContainer.innerHTML = this.price;
+            this.generateBasketTemplate();
+            this.exportToLocalStorage();
             return true;
+        }
+        generateBasketTemplate () {
+            let stateObj = this.items.reduce((prev, curr) =>{
+                prev.price += Number(curr.price);
+                prev.template = `${prev.template} ${this.itemTemplate(curr)}`;
+                return prev;
+            } ,{
+                price: 0,
+                template: ''
+            }
+            );
+            this.itemsContainer.innerHTML = stateObj.template || '<div class="basket__empty">Twój koszyk jest pusty</div>';
+            this.priceContainer.innerHTML = stateObj.price;
         }
         removeItem (item) {
             let index = this.items.findIndex((hero) => hero.name === item.name);
             this.items.splice(index, 1);
-            this.itemsContainer.innerHTML = !this.items.length 
-                ? '<div class="basket__empty">Twój koszyk jest pusty</div>'
-                : this.items.reduce((prev, curr) => `${prev} ${this.itemTemplate(curr)}`, '');
-            this.price -= item.price;
-            this.priceContainer.innerHTML = this.price;
+            this.generateBasketTemplate();
+            this.exportToLocalStorage();
         }
         itemTemplate (hero) {
             hero = {
@@ -42,7 +66,6 @@
                             <button class='basketHero__remove' data-hero="${hero.name}"><span class='basketHero__remove-span'>usuń z koszyka</span><span class="basketHero__remove-i"><i class="fas fa-times"></i></span></button>
                         </div>
                      </div>
-                        
                 </div>
             `
         }
@@ -58,7 +81,7 @@
         getTemplate(){
             return `
             <img class="hero__picture" src="${this.image}" data-hero="${this.name}">
-            <h2 class="hero__name">${this.name}</h2>
+                <h2 class="hero__name">${this.name}</h2>
             <p class="hero__rent">cena wynajmu ${this.price} zł</p>
             `;
         }   
@@ -85,66 +108,60 @@
         let arrHeros = heros.map(hero => new Hero(hero));
     
     
-            let herosContainer = document.querySelector(".heros");
-            let modalContainer = document.querySelector('.heros__description');
-            let contentButton = false;
-            
-            herosContainer.innerHTML = arrHeros.reduce((prev, curr) => `${prev}<div class='hero col-4 col-1-s col-5-md'>${curr.getTemplate()}</div>`, '');
-            herosContainer.addEventListener('click', (e) => {
-                let element = e.target;
-                if (element && element.classList.contains('hero__picture')) {
-                    fetch(`http://localhost:3000/heroes/${element.dataset.hero}`)
-                        .then(response => response.json())
-                        .then(response => {
-                            modalContainer.innerHTML = getModalTemplate(response);
-                            modalContainer.classList.add('heros__description__on');
-                        })
-                };
-            });
-    
-            modalContainer.addEventListener('click', (e) => {
-            let element = e.target;
+        const herosContainer = document.querySelector(".heros");
+        const modalContainer = document.querySelector('.heros__description');
+        let contentButton = false;
         
-            if (element && element.classList.contains('fa-times')) {
-                modalContainer.classList.remove('heros__description__on');
-    
+        herosContainer.innerHTML = arrHeros.reduce((prev, curr) => `${prev}<div class='hero col-4 col-1-s col-5-md'>${curr.getTemplate()}</div>`, '');
+        herosContainer.addEventListener('click', (e) => {
+            let element = e.target;
+            if (element && element.classList.contains('hero__picture')) {
+                fetch(`http://localhost:3000/heroes/${element.dataset.hero}`)
+                    .then(response => response.json())
+                    .then(response => {
+                        let hero = arrHeros.find((hero) => hero.name === element.dataset.hero);
+                        hero.description = response.description;
+                        modalContainer.innerHTML = getModalTemplate(response);
+                        modalContainer.classList.add('heros__description__on');
+                    })
             };
         });
+
+        modalContainer.addEventListener('click', (e) => {
+        let element = e.target;
     
-    
-            let priceTemplate = (hero) => {
-                return `
-                    ${hero.sumPrice}
-                `
-            }
-    
-    
-        let itemsContainer = document.querySelector('.basket__content');
-        let priceContainer = document.querySelector('.basket__amount-price');
+        if (element && element.classList.contains('fa-times')) {
+            modalContainer.classList.remove('heros__description__on');
+
+        };
+    });
+        
+        const itemsContainer = document.querySelector('.basket__content');
+        const priceContainer = document.querySelector('.basket__amount-price');
         let HeroBasket = new Basket({
                 itemsContainer,
                 priceContainer
             });
             
-            modalContainer.addEventListener('click', (e) => {
-                let element = e.target;
-                if (element && element.classList.contains('hero__buy')) {
-                    let hero = arrHeros.find((hero) => hero.name === element.dataset.hero);
-                    if (HeroBasket.addItem(hero)) {
-                        modalContainer.classList.remove('heros__description__on');
-                    } else {
-                        element.textContent = 'Znajduje się już w koszyku!';
-                    }          
-                };
-            });
-            
-            itemsContainer.addEventListener('click', (e) => {
-                let element = e.target.closest('.basketHero__remove');
-                if (element) {
-                    let hero = arrHeros.find((hero) => hero.name === element.dataset.hero);
-                    HeroBasket.removeItem(hero);
-                }
-            });
+        modalContainer.addEventListener('click', (e) => {
+            let element = e.target;
+            if (element && element.classList.contains('hero__buy')) {
+                let hero = arrHeros.find((hero) => hero.name === element.dataset.hero);
+                if (HeroBasket.addItem(hero)) {
+                    modalContainer.classList.remove('heros__description__on');
+                } else {
+                    element.textContent = 'Znajduje się już w koszyku!';
+                }          
+            };
+        });
+        
+        itemsContainer.addEventListener('click', (e) => {
+            let element = e.target.closest('.basketHero__remove');
+            if (element) {
+                let hero = arrHeros.find((hero) => hero.name === element.dataset.hero);
+                HeroBasket.removeItem(hero);
+            }
+        });
     };
 
     window.onload = () => {
@@ -158,6 +175,6 @@
 
     menuHamburger.addEventListener('click', function(){
         navSmallScreen__site.classList.toggle('navSmallScreen__site-toggle');
-      });
+    });
 
 }());

@@ -5,20 +5,45 @@ body {
   font-family: "Open Sans", sans-serif; }
 
 .navSmallScreen {
-  display: none;
-  z-index: 99;
+  z-index: 9;
   position: fixed;
-  padding: 4rem 0 0 1rem;
-  top: 0;
+  padding: 1rem 0 0 1rem;
   background: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  margin-top: 10rem; }
+  width: 100%; }
+  .navSmallScreen__site {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    right: 0;
+    transform: translateX(100%);
+    transition: 2s transform ease-in-out; }
+    .navSmallScreen__site .site__list {
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 2rem;
+      text-transform: uppercase; }
+      .navSmallScreen__site .site__list .site__item {
+        padding: 2rem 0;
+        text-transform: uppercase;
+        color: black;
+        font-size: 2rem; }
+      .navSmallScreen__site .site__list .item__link {
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        color: black; }
+
+.navSmallScreen__site {
+  display: none; }
+
+.navSmallScreen .navSmallScreen__site-toggle {
+  transform: translateX(0); }
 
 .menuHamburger {
+  z-index: 99;
   display: none; }
 
 .header {
-  background: url("images/home-slide01.jpg") bottom center no-repeat;
+  background: url("../images/home-slide01.jpg") bottom center no-repeat;
   min-height: 12rem;
   background-position: center top; }
   .header__logo {
@@ -33,7 +58,6 @@ body {
     border-right: 1px white solid;
     text-transform: uppercase;
     font-size: 1.4rem;
-    color: white;
     padding: 1rem 2.6rem; }
     .header .nav__item .item__link {
       text-decoration: none;
@@ -75,6 +99,10 @@ body {
       font-size: 1.7rem;
       margin: 4rem auto; }
 
+#select_hero {
+  width: 80%;
+  margin: 0 auto; }
+
 .footer {
   text-align: center;
   background-color: #271E54;
@@ -111,6 +139,9 @@ body {
     width: 40%; } }
 /*media-queries S*/
 @media screen and (min-width: 375px) and (max-width: 760px) {
+  .navSmallScreen__site {
+    display: inline-block; }
+
   .header__logo .header__logoImg {
     width: 100px; }
   .header .header__nav {
@@ -129,6 +160,9 @@ body {
     width: 80%; } }
 /*media-queries XS*/
 @media only screen and (max-width: 376px) {
+  .navSmallScreen__site {
+    display: inline-block; }
+
   .header__logo .header__logoImg {
     width: 100px; }
   .header .header__nav {
@@ -146,4 +180,4 @@ body {
   .addHeros .addHeros__add {
     width: 80%; } }
 
-/*# sourceMappingURL=addHero.css.map */
+/*# sourceMappingURL=editHero.css.map */

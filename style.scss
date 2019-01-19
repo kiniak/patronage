@@ -88,6 +88,9 @@ body{
         display: block;
     }
 }
+.navSmallScreen__site{
+    display: none;
+}
 .navSmallScreen{
     z-index: 9;
     position: fixed;
@@ -368,6 +371,9 @@ body{
             right: 2rem;
         }
     }
+    .navSmallScreen__site{
+        display: inline-block;
+    }
     .heros__description{
         .description__hero{
             width: 35rem;
@@ -416,6 +422,9 @@ body{
     .col-4 {
         flex-basis: 91.6666%;
         justify-content: center;
+    }
+    .navSmallScreen__site{
+        display: inline-block;
     }
 
     .header{

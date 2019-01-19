@@ -68,4 +68,13 @@ window.onload = () => {
         .then(response => init(response))
         .catch(error => console.error(error))
 }
+
+
+const menuHamburger = document.querySelector('.menuHamburger');
+const navSmallScreen__site = document.querySelector('.navSmallScreen__site');
+
+menuHamburger.addEventListener('click', function(){
+    navSmallScreen__site.classList.toggle('navSmallScreen__site-toggle');
+  });
+
 }());
